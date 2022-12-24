@@ -1,0 +1,48 @@
+.containerModalCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.322);
+}
+
+.modalCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 30vw;
+    height: 300px;
+    z-index: 10;
+}
+
+.containerHeaderModal {
+    display: flex;
+}
+
+.containerHeaderModal img {
+    position: absolute;
+    top: 230px;
+    right: 540px;
+    cursor: pointer;
+}
+
+.containerInformation {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.containerButtons {
+    display: flex;
+}
+
+.containerButtons button {
+    margin-left: 10px;
+}

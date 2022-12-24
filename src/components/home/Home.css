@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.fatherContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 90vh;
+    background-color: rgb(252, 211, 208);
+    padding: 30px;
+}
+
+.containerClients {
+    margin-top: 30px;
+    padding: 30px;
+    width: 90%;
+    height: 90%;
+    border: 1px solid black;
+}
+
+.containerItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.containerData {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+.containerButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerButtons button {
+    padding: 5px;
+}
+
+.containerTitles {
+    display: flex;
+}
+
