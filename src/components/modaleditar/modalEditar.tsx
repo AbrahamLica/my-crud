@@ -6,8 +6,8 @@ import { useContext } from "react";
 
 export const ModalEditar = () => {
   const { state, dispatch } = useContext(Context);
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [name, setName] = useState(state.cadastro[state.modal.pos].nameEdit)
+  const [email, setEmail] = useState(state.cadastro[state.modal.pos].emailEdit)
 
   function fechaModal() {
     dispatch({
@@ -19,7 +19,16 @@ export const ModalEditar = () => {
   }
 
   function atualizarCadastro() {
+    dispatch({
+      type: 'EDIT',
+      payload: {
+        name: name,
+        email: email,
+        pos: state.modal.pos
+      }
+    })
 
+    fechaModal()
   }
 
 
@@ -29,6 +38,10 @@ export const ModalEditar = () => {
 
   function inputSetEmail(e: ChangeEvent<HTMLInputElement>) {
     setEmail(e.target.value)
+  }
+
+  function teste() {
+    console.log(state.cadastro[0])
   }
 
   return (
@@ -53,6 +66,7 @@ export const ModalEditar = () => {
         <div className="containerButtons">
           <button onClick={atualizarCadastro}>Atualizar</button>
           <button onClick={fechaModal}>Cancelar</button>
+          <button onClick={teste}>teste</button>
         </div>
 
       </div>

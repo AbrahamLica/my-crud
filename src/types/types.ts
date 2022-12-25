@@ -1,6 +1,7 @@
 export type modalReducerInitialStateType = {
     isOpenModalCadastro: boolean
     isOpenModalEdit: boolean
+    pos: number
 }
 
 export type ActionType = {
@@ -30,6 +31,8 @@ export type InitialStateContextType = {
 export type cadastroReducerInitialStateType = {
     name?: string
     email?: string
+    nameEdit?: string
+    emailEdit?: string
 }
 
 

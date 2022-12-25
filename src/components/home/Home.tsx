@@ -7,6 +7,7 @@ import Clients from "../clients/Clients";
 import { ModalEditar } from "../modaleditar/modalEditar";
 
 const Home = () => {
+  
   const { state, dispatch } = useContext(Context);
 
   function openModal() {
@@ -18,8 +19,6 @@ const Home = () => {
     });
   }
 
-  
-
   return (
     <div className="fatherContainer">
 
@@ -30,8 +29,6 @@ const Home = () => {
         </div>
 
         <div className="containerTitles">
-          <h3>Nome</h3>
-          <h3>Email</h3>
           {state.modal.isOpenModalCadastro === true && <ModalCadastro></ModalCadastro>}
           {state.modal.isOpenModalEdit === true && <ModalEditar></ModalEditar>}
         </div>

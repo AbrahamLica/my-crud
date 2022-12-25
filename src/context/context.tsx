@@ -5,7 +5,8 @@ import { ActionType, ChildrenType, InitialStateContextType, modalReducerInitialS
 
 export const modalReducerInitialState: modalReducerInitialStateType = {
     isOpenModalCadastro: false,
-    isOpenModalEdit: false
+    isOpenModalEdit: false,
+    pos: 0
 }
 
 export function reducerModal(state: modalReducerInitialStateType, action: ActionType) {
@@ -25,6 +26,10 @@ export function reducerModal(state: modalReducerInitialStateType, action: Action
         case 'CLOSE_EDITAR':
             return {...state, isOpenModalEdit: action.payload.modalEdit}
             break;
+
+        case 'SET_POS':
+            return {...state, pos: action.payload.pos}
+            break;
     }
     return state
 }
@@ -32,7 +37,7 @@ export function reducerModal(state: modalReducerInitialStateType, action: Action
 ////////////////////// REDUCER CADASTRO DE PESSOAS /////////////////////////
 
 export const cadastroReducerInitialState: cadastroReducerInitialStateType[] = [
-    // {name: 'abraham', email: 'teste@gmail.com'}
+    
 ]   
 
 export function reducerCadastro(state: cadastroReducerInitialStateType[], action: ActionType) {
@@ -41,7 +46,9 @@ export function reducerCadastro(state: cadastroReducerInitialStateType[], action
             let newState = [...state]
             newState.push({
                 name: action.payload?.name,
-                email: action.payload?.email
+                email: action.payload?.email,
+                nameEdit: action.payload?.name,
+                emailEdit: action.payload.email
             })
             return newState
             break;
@@ -54,9 +61,9 @@ export function reducerCadastro(state: cadastroReducerInitialStateType[], action
 
         case 'EDIT':
             let newStateee = [...state]
-            let achei = newStateee.find(item => item.name == action.payload?.name)
-            let arrayedit = [achei?.name, achei?.email]
-            console.log(arrayedit)
+            newStateee[action.payload.pos].name = action.payload.name
+            newStateee[action.payload.pos].email = action.payload.email
+            console.log(newStateee)
             break;
             
     }

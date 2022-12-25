@@ -1,5 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 .containerItem {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 10px;
     width: 100%;
@@ -8,19 +16,19 @@
 
 .containerData {
     display: flex;
-    justify-content: space-around;
-    align-items: center;    
 }
 
-.containerData p {
+.containerName {
     margin-right: 100px;
 }
 
-.containerButtons {
-    display: flex;
-    justify-content: space-around;
-}
+.containerEmail {
 
-.containerButtons button {
-    padding: 5px;
+} 
+
+.containerButtons {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

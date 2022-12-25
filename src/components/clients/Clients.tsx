@@ -24,12 +24,11 @@ function excluirUsuario(item: any) {
     })
   }
 
-function editarUsuario(name: any, email: any) {
+function editarUsuario(index:any) {
     dispatch({
-      type: 'EDIT',
-      payload: {
-        name: name,
-        email: email
+      type: 'SET_POS',
+      payload: {  
+        pos: index
       }
     })
 
@@ -41,12 +40,16 @@ function editarUsuario(name: any, email: any) {
         {state.cadastro.map((item, index) => (
         <div className="containerItem">
             <div className="containerData">
-            <p>{item.name}</p>
-            <p>{item.email}</p>
+              <div className='containerName'>
+                <p>{item.name}</p>
+              </div>
+              <div className='containerEmail'>
+                <p>{item.email}</p>
+              </div>  
             </div>
             <div className="containerButtons">
-            <button onClick={() => editarUsuario(item.name, item.email)}>Editar</button>
-            <button onClick={() => excluirUsuario(item.name)}>Excluir</button>
+              <button onClick={() => editarUsuario(index)}>Editar</button>
+              <button onClick={() => excluirUsuario(item.name)}>Excluir</button>
             </div>
         </div>
         ))}
