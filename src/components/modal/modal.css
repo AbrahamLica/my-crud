@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .containerModalCadastro {
     display: flex;
     align-items: center;
@@ -13,7 +19,7 @@
 .modalCadastro {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     background-color: white;
     width: 30vw;
@@ -22,25 +28,45 @@
     border-radius: 20px;
 }
 
+.modalCadastro p {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 
 .modalCadastro img {
     position: absolute;
-    top: 230px;
-    right: 540px;
+    right: 680px;
     cursor: pointer;
+    width: 50px;
 }
 
 .containerInformation {
     display: flex;
+    width: 70%;
     flex-direction: column;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
+.containerInformation label {
+    font-size: 20px;
+}
+
+.containerInformation input {
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 20px;
+}
+
 .containerButtons {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .containerButtons button {
     margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 20px;
 }

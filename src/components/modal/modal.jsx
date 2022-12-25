@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import imgClose from "../../img/close.png";
 import "./modal.css";
 import { Context } from "../../context/context";
@@ -6,6 +6,8 @@ import { useContext } from "react";
 
 export const Modal = () => {
   const { state, dispatch } = useContext(Context);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
   function fechaModal() {
     dispatch({
@@ -26,8 +28,12 @@ export const Modal = () => {
     });
   }
 
-  function teste() {
-    console.log(state.cadastro);
+  function inputSetName() {
+
+  }
+
+  function inputSetEmail() {
+    
   }
 
   return (
@@ -35,24 +41,23 @@ export const Modal = () => {
 
       <div className="modalCadastro">
 
-        <img src={imgClose} onClick={fechaModal} />
+        <img src={imgClose} onClick={fechaModal} alt='nada'/>
     
-        <h3>Cadastro de clientes</h3>
+        <p>Cadastrar novo usuário</p>
 
         <div className="containerInformation">
           <label htmlFor="">Nome</label>
-          <input type="text" />
+          <input type="text" value={name} onChange={inputSetName}/>
         </div>
 
         <div className="containerInformation">
           <label htmlFor="">Email</label>
-          <input type="text" />
+          <input type="text" value={email} onChange={inputSetEmail} />
         </div>
 
         <div className="containerButtons">
           <button onClick={cadastraPessoa}>Salvar</button>
-          <button>Cancelar</button>
-          <button onClick={teste}>teste</button>
+          <button onClick={fechaModal}>Cancelar</button>
         </div>
 
       </div>
