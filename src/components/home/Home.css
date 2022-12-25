@@ -55,31 +55,6 @@ html, body {
     border: 1px solid black;
 }
 
-.containerItem {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    width: 100%;
-    border-bottom: 1px solid black;
-}
 
-.containerData {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;    
-}
-
-.containerData p {
-    margin-right: 100px;
-}
-
-.containerButtons {
-    display: flex;
-    justify-content: space-around;
-}
-
-.containerButtons button {
-    padding: 5px;
-}
 
 

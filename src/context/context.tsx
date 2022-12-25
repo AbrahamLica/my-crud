@@ -4,17 +4,26 @@ import { ActionType, ChildrenType, InitialStateContextType, modalReducerInitialS
 //////////////////////// REDUCER MODAL /////////////////////////
 
 export const modalReducerInitialState: modalReducerInitialStateType = {
-    isOpenModal: false
+    isOpenModalCadastro: false,
+    isOpenModalEdit: false
 }
 
 export function reducerModal(state: modalReducerInitialStateType, action: ActionType) {
     switch (action.type) {
-        case 'OPEN':
-            return {...state, isOpenModal: action.payload.modal}
+        case 'OPEN_CADASTRO':
+            return {...state, isOpenModalCadastro: action.payload.modalCadastro}
             break;
 
-        case 'CLOSE':
-            return {...state, isOpenModal: action.payload.modal}
+        case 'CLOSE_CADASTRO':
+            return {...state, isOpenModalCadastro: action.payload.modalCadastro}
+            break;
+
+        case 'OPEN_EDITAR':
+            return {...state, isOpenModalEdit: action.payload.modalEdit}
+            break;
+
+        case 'CLOSE_EDITAR':
+            return {...state, isOpenModalEdit: action.payload.modalEdit}
             break;
     }
     return state
@@ -31,10 +40,24 @@ export function reducerCadastro(state: cadastroReducerInitialStateType[], action
         case 'CADASTRAR':
             let newState = [...state]
             newState.push({
-                name: action.payload.name,
-                email: action.payload.email
+                name: action.payload?.name,
+                email: action.payload?.email
             })
             return newState
+            break;
+
+        case 'DEL':
+            let newStatee = [...state]
+            newStatee = newStatee.filter(item => item.name !== action.payload?.name)
+            return newStatee
+            break;
+
+        case 'EDIT':
+            let newStateee = [...state]
+            let achei = newStateee.find(item => item.name == action.payload?.name)
+            let arrayedit = [achei?.name, achei?.email]
+            console.log(arrayedit)
+            break;
             
     }
     return state

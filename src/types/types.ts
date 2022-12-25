@@ -1,5 +1,6 @@
 export type modalReducerInitialStateType = {
-    isOpenModal: boolean
+    isOpenModalCadastro: boolean
+    isOpenModalEdit: boolean
 }
 
 export type ActionType = {

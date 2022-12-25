@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import "./Home.css";
-import { Modal } from "../modal/modal";
+import { ModalCadastro } from "../modal/modalCadastro";
 import { Context } from "../../context/context";
 import { useContext } from "react";
+import Clients from "../clients/Clients";
+import { ModalEditar } from "../modaleditar/modalEditar";
 
 const Home = () => {
   const { state, dispatch } = useContext(Context);
 
   function openModal() {
     dispatch({
-      type: "OPEN",
+      type: "OPEN_CADASTRO",
       payload: {
-        modal: true,
+        modalCadastro: true,
       },
     });
   }
+
+  
 
   return (
     <div className="fatherContainer">
@@ -28,26 +32,12 @@ const Home = () => {
         <div className="containerTitles">
           <h3>Nome</h3>
           <h3>Email</h3>
-          {state.modal.isOpenModal == true && <Modal></Modal>}
+          {state.modal.isOpenModalCadastro === true && <ModalCadastro></ModalCadastro>}
+          {state.modal.isOpenModalEdit === true && <ModalEditar></ModalEditar>}
         </div>
 
         <div className="containerClients">
-          {state.cadastro.length &&
-            <div className="containerGeral">
-              {state.cadastro.map((item, index) => (
-                <div className="containerItem">
-                  <div className="containerData">
-                    <p>{item.name}</p>
-                    <p>{item.email}</p>
-                  </div>
-                  <div className="containerButtons">
-                    <button>Editar</button>
-                    <button>Excluir</button>
-                  </div>
-                </div>
-                ))}
-            </div> 
-          }
+          {state.cadastro.length ? (<Clients></Clients>) : null}
         </div>
  
       </div>

@@ -1,39 +1,34 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import imgClose from "../../img/close.png";
-import "./modal.css";
+import "./modalEditar.css";
 import { Context } from "../../context/context";
 import { useContext } from "react";
 
-export const Modal = () => {
+export const ModalEditar = () => {
   const { state, dispatch } = useContext(Context);
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
   function fechaModal() {
     dispatch({
-      type: "CLOSE",
+      type: "CLOSE_EDITAR",
       payload: {
-        modal: false,
+        modalEdit: false,
       },
     });
   }
 
-  function cadastraPessoa() {
-    dispatch({
-      type: "CADASTRAR",
-      payload: {
-        name: "fulano da silva",
-        email: "seila@gmail.com",
-      },
-    });
-  }
-
-  function inputSetName() {
+  function atualizarCadastro() {
 
   }
 
-  function inputSetEmail() {
-    
+
+  function inputSetName(e: ChangeEvent<HTMLInputElement>) {
+    setName(e.target.value)
+  }
+
+  function inputSetEmail(e: ChangeEvent<HTMLInputElement>) {
+    setEmail(e.target.value)
   }
 
   return (
@@ -43,7 +38,7 @@ export const Modal = () => {
 
         <img src={imgClose} onClick={fechaModal} alt='nada'/>
     
-        <p>Cadastrar novo usuário</p>
+        <p>Editar usuário</p>
 
         <div className="containerInformation">
           <label htmlFor="">Nome</label>
@@ -56,7 +51,7 @@ export const Modal = () => {
         </div>
 
         <div className="containerButtons">
-          <button onClick={cadastraPessoa}>Salvar</button>
+          <button onClick={atualizarCadastro}>Atualizar</button>
           <button onClick={fechaModal}>Cancelar</button>
         </div>
 
