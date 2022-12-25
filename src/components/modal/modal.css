@@ -19,13 +19,11 @@
     width: 30vw;
     height: 300px;
     z-index: 10;
+    border-radius: 20px;
 }
 
-.containerHeaderModal {
-    display: flex;
-}
 
-.containerHeaderModal img {
+.modalCadastro img {
     position: absolute;
     top: 230px;
     right: 540px;

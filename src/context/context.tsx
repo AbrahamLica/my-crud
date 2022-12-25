@@ -23,7 +23,7 @@ export function reducerModal(state: modalReducerInitialStateType, action: Action
 ////////////////////// REDUCER CADASTRO DE PESSOAS /////////////////////////
 
 export const cadastroReducerInitialState: cadastroReducerInitialStateType[] = [
-    {name: 'abraham', email: 'abrahamlica451@gmail.com'}
+    // {name: 'abraham', email: 'teste@gmail.com'}
 ]   
 
 export function reducerCadastro(state: cadastroReducerInitialStateType[], action: ActionType) {

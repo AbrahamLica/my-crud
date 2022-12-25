@@ -18,30 +18,40 @@ const Home = () => {
 
   return (
     <div className="fatherContainer">
+
       <div className="mainContainer">
-        <button onClick={openModal}>Cadastrar novo cliente</button>
-        <div className="containerClients">
-          {state.modal.isOpenModal == true && <Modal></Modal>}
-          {state.cadastro.map((item, index) => (
-            <div className="containerGeral">
-              <div className="containerTitles">
-                <h3>Nome</h3>
-                <h3>Email</h3>
-              </div>
-              <div className="containerItem">
-                <div className="containerData">
-                  <p>{item.name}</p>
-                  <p>{item.email}</p>
-                </div>
-                <div className="containerButtons">
-                  <button>Editar</button>
-                  <button>Excluir</button>
-                </div>
-              </div>
-            </div>
-          ))}
+
+        <div className="containerButtonCadastrar">
+          <button onClick={openModal}>Cadastrar novo cliente</button>
         </div>
+
+        <div className="containerTitles">
+          <h3>Nome</h3>
+          <h3>Email</h3>
+          {state.modal.isOpenModal == true && <Modal></Modal>}
+        </div>
+
+        <div className="containerClients">
+          {state.cadastro.length &&
+            <div className="containerGeral">
+              {state.cadastro.map((item, index) => (
+                <div className="containerItem">
+                  <div className="containerData">
+                    <p>{item.name}</p>
+                    <p>{item.email}</p>
+                  </div>
+                  <div className="containerButtons">
+                    <button>Editar</button>
+                    <button>Excluir</button>
+                  </div>
+                </div>
+                ))}
+            </div> 
+          }
+        </div>
+ 
       </div>
+
     </div>
   );
 };
