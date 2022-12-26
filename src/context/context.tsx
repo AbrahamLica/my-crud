@@ -63,6 +63,7 @@ export function reducerCadastro(state: cadastroReducerInitialStateType[], action
             let newStateee = [...state]
             newStateee[action.payload.pos].name = action.payload.name
             newStateee[action.payload.pos].email = action.payload.email
+            return newStateee
             console.log(newStateee)
             break;
             

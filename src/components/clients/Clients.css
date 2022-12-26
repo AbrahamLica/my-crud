@@ -19,11 +19,13 @@
 }
 
 .containerName {
+    padding: 10px;
     margin-right: 100px;
+    border-right: 1px solid black;
 }
 
 .containerEmail {
-
+    border: 1px solid black;
 } 
 
 .containerButtons {
