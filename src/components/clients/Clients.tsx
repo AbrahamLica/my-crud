@@ -37,20 +37,25 @@ function editarUsuario(index:any) {
   
   return (
     <div className="containerGeral">
+      
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+        </tr>
         {state.cadastro.map((item, index) => (
         <div className="containerItem">
-            <div className="containerData">
-              <div className='containerName'>
-                <p>{item.name}</p>
-              </div>
-              <div className='containerEmail'>
-                <p>{item.email}</p>
-              </div>  
-            </div>
-            <div className="containerButtons">
-              <button onClick={() => editarUsuario(index)}>Editar</button>
-              <button onClick={() => excluirUsuario(item.name)}>Excluir</button>
-            </div>
+
+          <table>
+            <tr>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+            </tr>
+          </table>
+
+          <div className="containerButtons">
+            <button onClick={() => editarUsuario(index)}>Editar</button>
+            <button onClick={() => excluirUsuario(item.name)}>Excluir</button>
+          </div>
         </div>
         ))}
     </div> 

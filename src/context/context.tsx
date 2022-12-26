@@ -6,7 +6,8 @@ import { ActionType, ChildrenType, InitialStateContextType, modalReducerInitialS
 export const modalReducerInitialState: modalReducerInitialStateType = {
     isOpenModalCadastro: false,
     isOpenModalEdit: false,
-    pos: 0
+    pos: 0,
+    theme: false
 }
 
 export function reducerModal(state: modalReducerInitialStateType, action: ActionType) {
@@ -30,6 +31,12 @@ export function reducerModal(state: modalReducerInitialStateType, action: Action
         case 'SET_POS':
             return {...state, pos: action.payload.pos}
             break;
+
+        case 'SWITCH_THEME':
+            return {...state, theme: action.payload.theme}
+            break;
+
+            
     }
     return state
 }

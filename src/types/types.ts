@@ -2,6 +2,7 @@ export type modalReducerInitialStateType = {
     isOpenModalCadastro: boolean
     isOpenModalEdit: boolean
     pos: number
+    theme: boolean
 }
 
 export type ActionType = {
