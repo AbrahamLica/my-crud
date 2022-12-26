@@ -43,10 +43,12 @@ const Home = () => {
   return (
     <div className={state.modal.theme ? 'fatherContainerDark': 'fatherContainerLight'}>
 
-      <div className="mainContainer">
+      <div className={state.modal.theme ? 'mainContainerDark': 'mainContainerLight'}>
 
         <div className="containerButtonCadastrar">
-          <button onClick={openModal}>Cadastrar novo cliente</button>
+          <button onClick={openModal} className={state.modal.theme ? 'buttonCadastrarDark': 'buttonCadastrarLight'}>
+            Cadastrar novo cliente
+          </button>
           <ReactSwitch onChange={trocarTema} checked={state.modal.theme}/>
         </div>
 
@@ -55,7 +57,7 @@ const Home = () => {
           {state.modal.isOpenModalEdit === true && <ModalEditar></ModalEditar>}
         </div>
 
-        <div className="containerClients">
+        <div className={state.modal.theme ? 'containerClientsDark': 'containerClientsLight'}>
           {state.cadastro.length ? (<Clients></Clients>) : null}
         </div>
  

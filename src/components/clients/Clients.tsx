@@ -43,7 +43,7 @@ function editarUsuario(index:any) {
           <th>Email</th>
         </tr>
         {state.cadastro.map((item, index) => (
-        <div className="containerItem">
+        <div className={state.modal.theme ? 'containerItemDark': 'containerItemLight'}>
 
           <table>
             <tr>
@@ -52,9 +52,9 @@ function editarUsuario(index:any) {
             </tr>
           </table>
 
-          <div className="containerButtons">
-            <button onClick={() => editarUsuario(index)}>Editar</button>
-            <button onClick={() => excluirUsuario(item.name)}>Excluir</button>
+          <div className='containerButtons'>
+            <button onClick={() => editarUsuario(index)} className={state.modal.theme ? 'buttonDark': 'buttonLight'}>Editar</button>
+            <button onClick={() => excluirUsuario(item.name)} className={state.modal.theme ? 'buttonDark': 'buttonLight'}>Excluir</button>
           </div>
         </div>
         ))}

@@ -5,13 +5,22 @@
 }
 
 
-.containerItem {
+.containerItemLight {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
+}
+
+.containerItemDark {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: 2px solid white;
 }
 
 tr th {
@@ -28,6 +37,34 @@ table th {
 table td{
  width: 500px;
  font-size: 20px;
+}
+
+.containerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLight{
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    background-color: #2274A5;
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.buttonDark{
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    background-color: #e5e5e5;
+    color: black;
+    font-size: 25px;
+    padding: 5px;
+    margin-right: 10px;
 }
 
 

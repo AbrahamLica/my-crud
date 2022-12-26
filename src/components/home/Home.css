@@ -10,7 +10,7 @@
     padding-top: 2vh;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: #FCEFEF;
 }
 
 .fatherContainerDark{
@@ -20,30 +20,47 @@
     padding-top: 2vh;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: #363636;
 }
 
-.mainContainer{
+.mainContainerLight{
     display: flex;
     flex-direction: column; 
     align-items: center;
     justify-content: center;
     width: 80%;
     height: 90vh;
-    background-color: white;
+    background-color: #F2AF29;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid black;
 }
 
-.containerButtonCadastrar {
+.mainContainerDark{
     display: flex;
+    flex-direction: column; 
     align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 90vh;
+    background-color: #242F40;
+    padding: 30px;
+    border-radius: 20px;
 }
 
-.containerButtonCadastrar button {
+.buttonCadastrarDark {
     padding: 10px;
-    background-color: black;
+    background-color: #e5e5e5;
+    color: #363636;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 900px;
+}
+
+.buttonCadastrarLight {
+    padding: 10px;
+    background-color: #2274A5;
     color: white;
     border: none;
     border-radius: 10px;
@@ -51,6 +68,29 @@
     font-size: 30px;
     margin-right: 900px;
 }
+
+.containerClientsDark {
+    margin-top: 30px;
+    padding: 30px;
+    width: 90%;
+    height: 90%;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+    color: #e5e5e5;
+}
+
+.containerClientsLight {
+    margin-top: 30px;
+    padding: 30px;
+    width: 90%;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 15px;
+    color: black;
+}
+
+
+/* /////////////////////////////////////////////// */
 
 .containerTitles {
     display: flex;
@@ -61,13 +101,13 @@
     margin-right: 110px;
 }
 
-.containerClients {
-    margin-top: 30px;
-    padding: 30px;
-    width: 90%;
-    height: 90%;
-    border: 1px solid black;
+.containerButtonCadastrar {
+    display: flex;
+    align-items: center;
 }
+
+
+
 
 
 

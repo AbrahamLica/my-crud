@@ -19,14 +19,18 @@ export const ModalCadastro = () => {
   }
 
   function cadastraPessoa() {
-    dispatch({
-      type: "CADASTRAR",
-      payload: {
-        name: name,
-        email: email,
-      },
-    });
-    fechaModal()
+    if (name === '' || email === '') {
+      alert('Por favor, preencha todos os campos')
+    } else {
+      dispatch({
+        type: "CADASTRAR",
+        payload: {
+          name: name,
+          email: email,
+        },
+      });
+      fechaModal()
+    }
   }
 
   function inputSetName(e: ChangeEvent<HTMLInputElement>) {
